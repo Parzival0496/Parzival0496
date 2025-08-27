@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Gamer 2.0 - Final Decorada</title>
+  <style>
+    /* Fuentes y colores base */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0b0b0b;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff4d00, #ff6f00);
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      margin: 0;
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
+      color: #ffeb3b;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff6f00;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      border-bottom: 2px solid #ff6f00;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      margin-bottom: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .slides img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      33% {transform: translateX(-100%);}
+      66% {transform: translateX(-200%);}
+      100% {transform: translateX(0);}
+    }
+
+    /* Grid y tarjetas */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 2px solid #ff6f00;
+      border-radius: 15px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255,111,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ff6f00;
+    }
+
+    .card h3 {
+      margin: 8px 0;
+      color: #ffab40;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .card p {
+      font-size: 0.95em;
+      line-height: 1.4em;
+      color: #e0e0e0;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff6f00, #ffab40);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ffab40, #ffd180);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255,111,0,0.6);
+    }
+
+    /* Foro */
+    .forum-post {
+      background: #1f1f1f;
+      border-left: 5px solid #ff6f00;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+
+    .forum-post h4 {
+      margin: 0;
+      color: #ffab40;
+    }
+
+    /* Memes */
+    .meme img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .meme img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #ff4d00, #ff6f00);
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .social-links img {
+      width: 35px;
+      height: 35px;
+      vertical-align: middle;
+      margin-right: 8px;
+      filter: drop-shadow(1px 1px 3px #000);
+      transition: transform 0.3s;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+
+    a.download-link {
+      color: #ffab40;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a.download-link:hover {
+      color: #ffd180;
+      text-decoration: underline;
+    }
+
+    /* Texto de secciones */
+    section p {
+      color: #dcdcdc;
+      line-height: 1.5em;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 Zona Gamer 2.0</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#guias">Guías</a>
+    <a href="#reseñas">Reseñas</a>
+    <a href="#videos">Videos</a>
+    <a href="#foro">Foro</a>
+    <a href="#memes">Memes</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <!-- Inicio / Slider -->
+  <section id="inicio">
+    <h2>Noticias Destacadas</h2>
+    <div class="slider">
+      <div class="slides">
+        <img src="https://via.placeholder.com/1200x280?text=Fortnite+Evento+Remix" alt="Fortnite Evento">
+        <img src="https://via.placeholder.com/1200x280?text=GTA+V+Actualizaciones" alt="GTA V Actualizaciones">
+        <img src="https://via.placeholder.com/1200x280?text=Minecraft+Mods+Nuevos" alt="Minecraft Mods">
+      </div>
+    </div>
+    <p>Zona Gamer 2.0 te trae las últimas noticias del mundo gamer: eventos de Fortnite, actualizaciones de GTA V y nuevos mods para Minecraft. Mantente siempre al día con lo más relevante y reciente.</p>
+  </section>
+
+  <!-- Guías -->
+  <section id="guias">
+    <h2>Guías y Tutoriales</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Fortnite" alt="Fortnite">
+        <h3>Fortnite</h3>
+        <p>Domina cualquier modo competitivo con estrategias avanzadas, construcción rápida y trucos secretos.</p>
+        <button>Leer guía</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=GTA+V" alt="GTA V">
+        <h3>GTA V</h3>
+        <p>Descubre todos los secretos de Los Santos, misiones ocultas y consejos para mejorar tu experiencia online.</p>
+        <button>Leer guía</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Minecraft" alt="Minecraft">
+        <h3>Minecraft</h3>
+        <p>Aprende a instalar mods, crear mapas personalizados y construir mundos impresionantes.</p>
+        <button>Leer guía</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Valorant" alt="Valorant">
+        <h3>Valorant</h3>
+        <p>Domina cada agente con tácticas avanzadas y coordina estrategias para ganar partidas competitivas.</p>
+        <button>Leer guía</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reseñas -->
+  <section id="reseñas">
+    <h2>Reseñas de Juegos</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Cyberpunk+2077" alt="Cyberpunk 2077">
+        <h3>Cyberpunk 2077</h3>
+        <p>Explora Night City y toma decisiones que afectarán la historia. Evaluamos gráficos, jugabilidad y narrativa.</p>
+        <button>Leer reseña</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Red+Dead+Redemption+2" alt="Red Dead Redemption 2">
+        <h3>Red Dead Redemption 2</h3>
+        <p>Sumérgete en el Lejano Oeste con una historia épica y un mundo abierto increíblemente detallado.</p>
+        <button>Leer reseña</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos">
+    <h2>Videos y Streamings</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/250x150?text=Clip+Épico+Fortnite" alt="Clip Fortnite">
+        <h3>Clip Épico Fortnite</h3>
+        <p>Disfruta de las jugadas más increíbles y aprende estrategias viendo clips de jugadores profesionales.</
